@@ -1,5 +1,5 @@
-#ifndef _BMSPARAMETERS_H_
-#define _BMSPARAMETERS_H_
+#ifndef _WRITEDATATOCSV_H_
+#define _WRITEDATATOCSV_H_
 #include <iostream>
 #include <string>
 #include <fstream>
