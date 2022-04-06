@@ -18,7 +18,7 @@ TEST_CASE("Fetch and test the data of soc - High Limit Test") {
 
 TEST_CASE("Fetch and test the data of Temperature - Low Limit Test") {
     TempSensor *tempSensorData3 = new TempSensor;
-    REQUIRE(tempSensorData3->fetchSensorData() <= -40);
+    REQUIRE(tempSensorData3->fetchSensorData() >= -40);
     delete tempSensorData3;
 }
 
