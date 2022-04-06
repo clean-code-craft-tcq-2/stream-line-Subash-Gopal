@@ -8,7 +8,7 @@
 
 TEST_CASE("Fetches data from a sensor and writtens to CSV FilE") {
     Sender sender;
-    REQUIRE(sender.sendBMSSensorData() = true);
+    REQUIRE(sender.sendBMSSensorData() == true);
 }
 
 TEST_CASE("Fetch and test the data of soc - Low Limit Test") {
