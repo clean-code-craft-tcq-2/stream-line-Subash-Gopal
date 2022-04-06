@@ -16,9 +16,9 @@ public:
         int validateCount = 1;
         for (int iterator = 0; iterator < streamingLimit; iterator++)
         {
-            BMSParameters *BMSParameters1 = new TempSensor;
-            BMSParameters *BMSParameters2 = new SocSensor;
-            writeData.printBMSSenderData(iterator, BMSParameters1->fetchSensorData(), BMSParameters2->fetchSensorData());
+            BMSParameters *BMSParameterSoc = new TempSensor;
+            BMSParameters *BMSParameterTemp = new SocSensor;
+            writeData.printBMSSenderData(iterator, BMSParameterSoc->fetchSensorData(), BMSParameterTemp->fetchSensorData());
             validateCount++;
         }
         return (validateCount == streamingLimit)?  true :false;
