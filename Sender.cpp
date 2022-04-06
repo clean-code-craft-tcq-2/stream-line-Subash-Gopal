@@ -13,7 +13,7 @@ public:
     bool sendBMSSensorData()
     {
         WriteDataToCSV writeData;
-        int validateCount = 1;
+        int validateCount = 0;
         for (int iterator = 0; iterator < streamingLimit; iterator++)
         {
             BMSParameters *BMSParameterSoc = new TempSensor;
