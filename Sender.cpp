@@ -1,33 +1,9 @@
 #include "BMSParameters.h"
+#include "WriteDataToCSV.h"
 #include "TempSensor.h"
 #include "SocSensor.h"
 #include <iostream>
-#include <string>
-#include <fstream>
 
-class WriteDataToCSV
-{
-private:
-    std::ofstream BmsSendorDataFile;
-
-public:
-    WriteDataToCSV()
-    {
-        BmsSendorDataFile.open("BmsSendorData.csv", std::ios::out | std::ios::trunc);
-        BmsSendorDataFile << "Count, SOC Sensor Data, Temperature Sensor Data \n";
-    }
-
-    ~WriteDataToCSV()
-    {
-        BmsSendorDataFile.flush();
-        BmsSendorDataFile.close();
-    }
-
-    void printBMSSenderData(int i, int currentsocValueData, int currentTempValueData)
-    {
-        BmsSendorDataFile << i << "," << currentsocValueData << "," << currentTempValueData << "\n";
-    }
-};
 class Sender
 {
 private:
@@ -45,10 +21,3 @@ public:
         }
     }
 };
-
-int main()
-{
-    Sender a;
-    a.sendBMSSensorData();
-    return 0;
-}
