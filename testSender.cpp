@@ -5,6 +5,12 @@
 #include "TempSensor.h"
 #include "Sender.cpp"
 
+
+TEST_CASE("Fetches data from a sensor and writtens to CSV FilE") {
+    Sender sender;
+    REQUIRE(sender.sendBMSSensorData() = true);
+}
+
 TEST_CASE("Fetch and test the data of soc - Low Limit Test") {
     SocSensor *socSensorData1 = new SocSensor;
     REQUIRE(socSensorData1->fetchSensorData() >= 0);
