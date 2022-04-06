@@ -20,7 +20,7 @@ public:
             BMSParameters *BMSParameterTemp = new SocSensor;
             writeData.printBMSSenderData(iterator, BMSParameterSoc->fetchSensorData(), BMSParameterTemp->fetchSensorData());
             validateCount++;
-            cout<<"subash"<<validateCount;
+            std::cout<<"subash"<<validateCount;
         }
         return (validateCount == streamingLimit)?  true :false;
     }
