@@ -5,25 +5,25 @@
 #include "TempSensor.h"
 
 TEST_CASE("Fetch and test the data of soc - Low Limit Test") {
-    SocSensor *socSensorData = new SocSensor;
-    REQUIRE(socSensorData->fetchSensorData() >= 0);
-    delete socSensorData;
+    SocSensor *socSensorData1 = new SocSensor;
+    REQUIRE(socSensorData1->fetchSensorData() >= 0);
+    delete socSensorData1;
 }
 
 TEST_CASE("Fetch and test the data of soc - High Limit Test") {
-    SocSensor *socSensorData = new SocSensor;
-    REQUIRE(socSensorData->fetchSensorData() <= 100);
-    delete socSensorData;
+    SocSensor *socSensorData2 = new SocSensor;
+    REQUIRE(socSensorData2->fetchSensorData() <= 100);
+    delete socSensorData2;
+}
+
+TEST_CASE("Fetch and test the data of Temperature - Low Limit Test") {
+    TempSensor *tempSensorData3 = new TempSensor;
+    REQUIRE(tempSensorData3->fetchSensorData() <= -40);
+    delete tempSensorData3;
 }
 
 TEST_CASE("Fetch and test the data of Temperature - High Limit Test") {
-    TempSensor *tempSensorData = new TempSensor;
-    REQUIRE(tempSensorData->fetchSensorData() <= -40);
-    delete tempSensorData;
-}
-
-TEST_CASE("Fetch and test the data of Temperature - High Limit Test") {
-    TempSensor *tempSensorData = new TempSensor;
-    REQUIRE(tempSensorData->fetchSensorData() <= 40);
-    delete tempSensorData;
+    TempSensor *tempSensorData4 = new TempSensor;
+    REQUIRE(tempSensorData4->fetchSensorData() <= 40);
+    delete tempSensorData4;
 }
