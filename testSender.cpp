@@ -2,6 +2,7 @@
 
 #include "test/catch.hpp"
 #include "SocSensor.h"
+#include "TempSensor.h"
 
 TEST_CASE("Fetch and test the data of soc - Low Limit Test") {
     SocSensor *socSensorData = new SocSensor;
