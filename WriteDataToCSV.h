@@ -12,12 +12,14 @@ private:
 public:
     WriteDataToCSV()
     {
+        std::cout<<"Opened the CSV file to write the data"
         BmsSendorDataFile.open("BmsSendorData.csv", std::ios::out | std::ios::trunc);
         BmsSendorDataFile << "Count, SOC Sensor Data, Temperature Sensor Data \n";
     }
 
     ~WriteDataToCSV()
     {
+        std::cout<<"Closed the CSV file"
         BmsSendorDataFile.flush();
         BmsSendorDataFile.close();
     }
