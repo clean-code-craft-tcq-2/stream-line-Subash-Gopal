@@ -33,8 +33,10 @@ void readSensorDataFromCSV()
             }
         }
     }
-    catch(std::exception const& e){
-     std::cout << "There was an error: " << e.what() <<std:: endl;
+    catch (std::exception const &e)
+    {
+        std::cout << "There was an error: " << e.what() << std::endl;
+    }
 }
 
 TEST_CASE("Fetches data from a sensor and writtens to CSV FilE and tests the values reading from the CSV file ") {
