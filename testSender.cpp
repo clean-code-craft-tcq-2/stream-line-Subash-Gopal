@@ -62,7 +62,9 @@ TEST_CASE("Fetches data from a sensor and writtens to CSV FilE and tests the val
             std::istringstream(content[i][2]) >> valueTemp;	
             REQUIRE(valueTemp >= -40);
 	    REQUIRE(valueTemp <= 40);
+	    cout<<content[i][j];
 	}
+	cout<<"\n";
     }
 }
 
