@@ -18,7 +18,7 @@ TEST_CASE("Fetches data from a sensor and writtens to CSV FilE") {
     vector<vector<string>> content;
     vector<string> row;
     string line, word;
-    fstream file (fname, ios::in);
+    fstream file (fname);
     if(file.is_open())
 	{
 	    while(getline(file, line))
