@@ -33,9 +33,9 @@ TEST_CASE("Fetches data from a sensor and writtens to CSV FilE") {
 	else
 	    cout<<"Could not open the file\n";
 
-	for(int i=0;i<51;i++)
+	for(int i=0;i<content.size();i++)
 	{
-	    for(int j=0;j<3;j++)
+	    for(int j=0;j<content[i].size();j++)
 	    {
 		cout<<content[i][j]<<" ";
 	    }
