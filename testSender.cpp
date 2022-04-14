@@ -37,12 +37,12 @@ void readSensorDataFromCSV()
 TEST_CASE("Fetches data from a sensor and writtens to CSV FilE and tests the values reading from the CSV file ") {
     Sender sender;
     sender.sendBMSSensorData();    
-    readSensorDataFromCSV();   
+    readSensorDataFromCSV();
+    int count, valueSOC, valueTemp;  
     for(int i=1;i<51;i++)
     {
 	for(int j=0;j<3;j++)
-	{  
-	    int count;
+	{  	    
             std::istringstream(content[i][0]) >> count;
             REQUIRE(count >= 0);
 	    REQUIRE(count <= 49);
