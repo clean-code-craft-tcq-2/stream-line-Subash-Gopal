@@ -1,9 +1,9 @@
 #define CATCH_CONFIG_MAIN
 
 #include "test/catch.hpp"
-#include "SocSensor.h"
-#include "TempSensor.h"
-#include "Sender.cpp"
+#include "Sender/SocSensor.h"
+#include "Sender/TempSensor.h"
+#include "Sender/Sender.cpp"
 #include <string>
 #include <fstream>
 #include <sstream>
