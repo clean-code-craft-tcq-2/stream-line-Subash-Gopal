@@ -10,12 +10,11 @@
 
 using namespace std;
 
-TEST_CASE("Fetches data from a sensor and writtens to CSV FilE") {
-    Sender sender;
-    sender.sendBMSSensorData();
-   
+vector<vector<string>> content;
+
+void readSensorDataFromCSV()
+{
     string fname = "BmsSendorData.csv";
-    vector<vector<string>> content;
     vector<string> row;
     string line, word;
     fstream file(fname);
@@ -33,7 +32,12 @@ TEST_CASE("Fetches data from a sensor and writtens to CSV FilE") {
     else
     {
     }
-    
+}
+
+TEST_CASE("Fetches data from a sensor and writtens to CSV FilE and tests the values reading from the CSV file ") {
+    Sender sender;
+    sender.sendBMSSensorData();    
+    readSensorDataFromCSV();   
     for(int i=1;i<51;i++)
     {
 	for(int j=0;j<3;j++)
