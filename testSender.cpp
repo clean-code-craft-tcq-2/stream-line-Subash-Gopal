@@ -12,8 +12,8 @@ using namespace std;
 
 TEST_CASE("Fetches data from a sensor and writtens to CSV FilE") {
     Sender sender;
-    //REQUIRE(sender.sendBMSSensorData() == true);
-    
+    sender.sendBMSSensorData();
+   
     string fname = "BmsSendorData.csv";
     vector<vector<string>> content;
     vector<string> row;
