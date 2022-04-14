@@ -32,7 +32,6 @@ TEST_CASE("Fetches data from a sensor and writtens to CSV FilE") {
     }
     else
     {
-        REQUIRE(false);
     }
 
    REQUIRE(content.size() == 51);
