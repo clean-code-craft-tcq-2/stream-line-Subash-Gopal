@@ -35,7 +35,7 @@ TEST_CASE("Fetches data from a sensor and writtens to CSV FilE") {
 
 	for(int i=0;i<51;i++)
 	{
-	    for(int j=0;j<content[i].size();j++)
+	    for(int j=0;j<3;j++)
 	    {
 		cout<<content[i][j]<<" ";
 	    }
