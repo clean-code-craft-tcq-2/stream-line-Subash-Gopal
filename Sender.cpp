@@ -10,17 +10,14 @@ private:
     const int streamingLimit = 50;
 
 public:
-    bool sendBMSSensorData()
+    void sendBMSSensorData()
     {
         WriteDataToCSV writeData;
-        int validateCount = 0;
         for (int iterator = 0; iterator < streamingLimit; iterator++)
         {
             BMSParameters *BMSParameterSoc = new SocSensor;
             BMSParameters *BMSParameterTemp = new TempSensor;
             writeData.printBMSSenderData(iterator, BMSParameterSoc->fetchSensorData(), BMSParameterTemp->fetchSensorData());
-            validateCount++;
         }
-        return (validateCount == streamingLimit)?  true :false;
     }
 };
