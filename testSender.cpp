@@ -4,11 +4,36 @@
 #include "SocSensor.h"
 #include "TempSensor.h"
 #include "Sender.cpp"
-
+#include <string>
+#include <fstream>
+#include <sstream>
 
 TEST_CASE("Fetches data from a sensor and writtens to CSV FilE") {
     Sender sender;
     REQUIRE(sender.sendBMSSensorData() == true);
+    	fstream file (fname, ios::in);
+        if(file.is_open())
+        {
+            while(getline(file, line))
+            {
+                row.clear();
+                stringstream str(line);
+                while(getline(str, word, ','))
+                    row.push_back(word);
+                content.push_back(row);
+            }
+        }
+        else
+            cout<<"Could not open the file\n";
+
+        for(int i=0;i<content.size();i++)
+        {
+            for(int j=0;j<content[i].size();j++)
+            {
+                cout<<content[i][j]<<" ";
+            }
+            cout<<"\n";
+        }
 }
 
 TEST_CASE("Fetch and test the data of soc - Low Limit Test") {
