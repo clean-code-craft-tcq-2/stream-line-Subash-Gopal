@@ -37,15 +37,21 @@ TEST_CASE("Fetches data from a sensor and writtens to CSV FilE") {
     for(int i=1;i<51;i++)
     {
 	for(int j=0;j<3;j++)
-	{
-	    REQUIRE(content[i][0] >= 0);
-	    REQUIRE(content[i][0] <= 49);
+	{  
+	    int count;
+            std::istringstream(content[i][0]) >> count;
+            REQUIRE(count >= 0);
+	    REQUIRE(count <= 49);
 		
-	    REQUIRE(content[i][1] <= 100);
-	    REQUIRE(content[i][1] >= 0);
-		
-            REQUIRE(content[i][2] >= -40);
-	    REQUIRE(content[i][2] <= 40);
+	    int valueSOC;
+            std::istringstream(content[i][1]) >> valueSOC;
+            REQUIRE(valueSOC <= 100);
+	    REQUIRE(valueSOC >= 0);
+	    
+	    int valueTemp;
+            std::istringstream(content[i][2]) >> valueTemp;	
+            REQUIRE(valueTemp >= -40);
+	    REQUIRE(valueTemp <= 40);
 	}
     }
 }
