@@ -17,21 +17,24 @@ void readSensorDataFromCSV()
     string fname = "BmsSendorData.csv";
     vector<string> row;
     string line, word;
-    fstream file(fname);
-    if (file.is_open())
+
+    try
     {
-        while (getline(file, line))
+        fstream file(fname);
+        if (file.is_open())
         {
-            row.clear();
-            stringstream str(line);
-            while (getline(str, word, ','))
-                row.push_back(word);
-            content.push_back(row);
+            while (getline(file, line))
+            {
+                row.clear();
+                stringstream str(line);
+                while (getline(str, word, ','))
+                    row.push_back(word);
+                content.push_back(row);
+            }
         }
     }
-    else
-    {
-    }
+    catch(std::exception const& e){
+     std::cout << "There was an error: " << e.what() <<std:: endl;
 }
 
 TEST_CASE("Fetches data from a sensor and writtens to CSV FilE and tests the values reading from the CSV file ") {
