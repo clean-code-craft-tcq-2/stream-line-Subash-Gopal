@@ -33,12 +33,10 @@ TEST_CASE("Fetches data from a sensor and writtens to CSV FilE") {
     else
     {
     }
-
-   REQUIRE(content.size() == 51);
     
-    for(int i=1;i<content.size();i++)
+    for(int i=1;i<51;i++)
     {
-	for(int j=0;j<content[i].size();j++)
+	for(int j=0;j<3;j++)
 	{
 	    REQUIRE(content[i][0] >= 0);
 	    REQUIRE(content[i][0] <= 49);
