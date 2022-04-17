@@ -44,8 +44,8 @@ TEST_CASE("Fetches data from a sensor and writtens to CSV FilE and tests the val
     Sender sender;
     sender.sendBMSSensorData();    
     readSensorDataFromCSV();
-    int count, valueSOC, valueTemp; 
-    int numberOfEntries=50 + heading;
+    int count, valueSOC, valueTemp, headingTitle = 1; 
+    int numberOfEntries=50 + headingTitle;
     int numberOfSensor = 2;
     for(int i=1;i<numberOfEntries;i++)
     {
