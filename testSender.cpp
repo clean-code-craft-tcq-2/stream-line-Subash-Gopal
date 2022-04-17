@@ -66,6 +66,7 @@ TEST_CASE("Fetches data from a sensor and writtens to CSV FilE and tests the val
     }
 }
 
+//Below test cases helps us to check sensor funtionality 
 TEST_CASE("Fetch and test the data of soc - Low Limit Test") {
     SocSensor *socSensorData1 = new SocSensor;
     REQUIRE(socSensorData1->fetchSensorData() >= 0);
