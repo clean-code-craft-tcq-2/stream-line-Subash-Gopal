@@ -44,10 +44,12 @@ TEST_CASE("Fetches data from a sensor and writtens to CSV FilE and tests the val
     Sender sender;
     sender.sendBMSSensorData();    
     readSensorDataFromCSV();
-    int count, valueSOC, valueTemp;  
-    for(int i=1;i<51;i++)
+    int count, valueSOC, valueTemp; 
+    int numberOfEntries=50 + heading;
+    int numberOfSensor = 2;
+    for(int i=1;i<numberOfEntries;i++)
     {
-	for(int j=0;j<3;j++)
+	for(int j=0;j<=numberOfSensor;j++)
 	{  	    
             std::istringstream(content[i][0]) >> count;
             REQUIRE(count >= 0);
