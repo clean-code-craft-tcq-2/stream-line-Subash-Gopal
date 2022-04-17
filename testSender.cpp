@@ -53,12 +53,10 @@ TEST_CASE("Fetches data from a sensor and writtens to CSV FilE and tests the val
             REQUIRE(count >= 0);
 	    REQUIRE(count <= 49);
 		
-	    int valueSOC;
             std::istringstream(content[i][1]) >> valueSOC;
             REQUIRE(valueSOC <= 100);
 	    REQUIRE(valueSOC >= 0);
 	    
-	    int valueTemp;
             std::istringstream(content[i][2]) >> valueTemp;	
             REQUIRE(valueTemp >= -40);
 	    REQUIRE(valueTemp <= 40);
