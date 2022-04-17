@@ -10,11 +10,11 @@ At a top level, the program runs in two processes - the sender and the receiver.
 flowchart LR
 A((sensor1)) --> Sender
 B((sensor2)) --> Sender
-Sender --> |line-by-line-via-console|Receiver
+Sender --> |csv file|Receiver
 Receiver --> |statistics|C((Output))
 ```
 
-The Sender simulates and processes data from sensors. It sends data line-by-line to the console, in a format that it defines.
+The Sender simulates and processes data from sensors. It sends data line-by-line to the csv file, in a format that it defines.
 The Receiver inputs this data and computes statistics.
 
 The Sender sends data to the Receiver using [console redirection and pipes](https://ss64.com/nt/syntax-redirection.html).
@@ -63,11 +63,11 @@ This section lists the minimum functionality of the Sender and Receiver.
 - simulates and sends at least two Battery / Charging parameters
 - sends fifty readings in a stream
 - can either generate values for the parameters, or read from a file
-- uses console output to communicate the parameters.
+- uses csv file to communicate the parameters.
 
 ### The Receiver
 
-- reads the parameters from the console input
+- reads the parameters from the csv file
 - after reading every parameter, it prints the following:
     - maximum and minimum values in the incoming stream
     - [simple moving average](https://www.investopedia.com/terms/s/sma.asp) of the last 5 values
