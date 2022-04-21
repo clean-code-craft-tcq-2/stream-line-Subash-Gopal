@@ -1,5 +1,8 @@
 #include "computeReceivedData.h"
 
+int minVal[entries] = {50,50};
+int maxVal[entries] = {0,0};
+
 FileAccess ReadData, WriteData;
 int buffSize=0;
 int ReadingCount[]={};
@@ -49,8 +52,8 @@ void findTempMinMaxValues(int Count)
 /* Function to find minimum and maximum SoC value from sender readings */
 void findSoCMinMaxValues(int Count)
 {
- findParamMinValue(SoC, Count, &minVal[0]);
- findParamMaxValue(SoC, Count, &maxVal[0]);
+ findParamMinValue(SoC, Count, &minVal[1]);
+ findParamMaxValue(SoC, Count, &maxVal[1]);
  printf("Minimum and Maximum SoC values from Sender are %d%%  and %d%% \n",minVal[0],maxVal[0]);
 }
 
@@ -90,7 +93,7 @@ for(int i=(Count-5); i< Count; i++)
 /* Function to calculate SMA for last 5 Temperature readings */
 float calculateSMAforTemp(int sensorValue[], int Count)
 {
-float temperatureSMA = calculateSMA(Temperature, Count)
+float temperatureSMA = calculateSMA(Temperature, Count);
 printf("Simple moving average of last 5 temperature readings\n", temperatureSMA);
 return temperatureSMA;
 }
@@ -98,7 +101,7 @@ return temperatureSMA;
 /* Function to calculate SMA for last 5 SoC readings */
 float calculateSMAforSoC(int sensorValue[], int Count)
 {
-float socSMA = calculateSMA(SoC, Count)
+float socSMA = calculateSMA(SoC, Count);
 printf("Simple moving average of last 5 SoC readings\n", socSMA);
 return socSMA;
 }
@@ -110,9 +113,9 @@ ReadData = readSenderData();
   if(ReadData==OK)
     {
       findTempMinMaxValues(Count);
-      findSoCMinMaxValues(Count)
-      calculateSMAforTemp(sensorValue[], Count);
-      calculateSMAforSoC(sensorValue[], Count);
+      findSoCMinMaxValues(Count);
+      calculateSMAforTemp(sensorValue, Count);
+      calculateSMAforSoC(sensorValue, Count);
     }
 return ReadData;
 }
