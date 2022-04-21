@@ -1,16 +1,16 @@
+#include "computeReceivedData.h"
+
 FileAccess ReadData, WriteData;
 int buffSize=0;
+int ReadingCount[]={};
 int Temperature[]={};
-int	SoC[]={};
+int SoC[]={};
 
 /* Function to read the sensor readings from "SenderDataFromConsole.txt" file and store into a buffer */
 FileAccess readSenderData()
 {
   FILE *sensData_fp;
-  int line=1, Idx=0, buffSize=0;
-  int ReadingCount[]={};
-  int SoC[]={};
-  int Temperature[]={};
+  int line=1, Idx=0;
   FileAccess ReadData= NOK;
 
   sensData_fp=fopen("./Receiver/SenderData.txt", "r");
@@ -105,14 +105,14 @@ return socSMA;
 
 FileAccess computeSenderData()
 {
-	FileAccess ReadData = NOK;
-	ReadData = readSenderData();
-	if(ReadData==OK)
-	{
-		findTempMinMaxValues(Count);
-		findSoCMinMaxValues(Count)
-		calculateSMAforTemp(sensorValue[], Count);
-		calculateSMAforSoC(sensorValue[], Count);
-	}
-	return ReadData;
+FileAccess ReadData = NOK;
+ReadData = readSenderData();
+  if(ReadData==OK)
+    {
+      findTempMinMaxValues(Count);
+      findSoCMinMaxValues(Count)
+      calculateSMAforTemp(sensorValue[], Count);
+      calculateSMAforSoC(sensorValue[], Count);
+    }
+return ReadData;
 }
