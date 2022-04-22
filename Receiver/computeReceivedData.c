@@ -58,7 +58,7 @@ void findSoCMinMaxValues(int Count)
 }
 
 /* Function to find minimum value of battery parameter */
-void findParamMinValue(int sensorValue[], int Count, float *minSensorVal)
+void findParamMinValue(int sensorValue[], int Count, int *minSensorVal)
  {
    for(int i=0; i< Count; i++)
    {
@@ -68,7 +68,7 @@ void findParamMinValue(int sensorValue[], int Count, float *minSensorVal)
  }
 
 /* Function to find maximum value of battery parameter */ 
-void findParamMaxValue(int sensorValue[], int Count, float *maxSensorVal)
+void findParamMaxValue(int sensorValue[], int Count, int *maxSensorVal)
  {
    for(int i=0; i< Count; i++)
    {
@@ -114,8 +114,8 @@ ReadData = readSenderData();
     {
       findTempMinMaxValues(Count);
       findSoCMinMaxValues(Count);
-      calculateSMAforTemp(sensorValue, Count);
-      calculateSMAforSoC(sensorValue, Count);
+      calculateSMAforTemp(sensorValue[], Count);
+      calculateSMAforSoC(sensorValue[], Count);
     }
 return ReadData;
 }
