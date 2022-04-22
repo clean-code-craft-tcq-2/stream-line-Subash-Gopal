@@ -91,7 +91,7 @@ for(int i=(Count-5); i< Count; i++)
 }
 
 /* Function to calculate SMA for last 5 Temperature readings */
-float calculateSMAforTemp(int sensorValue[], int Count)
+float calculateSMAforTemp(int Count)
 {
 float temperatureSMA = calculateSMA(Temperature, Count);
 printf("Simple moving average of last 5 temperature readings\n", temperatureSMA);
@@ -99,7 +99,7 @@ return temperatureSMA;
 }
 
 /* Function to calculate SMA for last 5 SoC readings */
-float calculateSMAforSoC(int sensorValue[], int Count)
+float calculateSMAforSoC(int Count)
 {
 float socSMA = calculateSMA(SoC, Count);
 printf("Simple moving average of last 5 SoC readings\n", socSMA);
@@ -114,8 +114,8 @@ ReadData = readSenderData();
     {
       findTempMinMaxValues(Count);
       findSoCMinMaxValues(Count);
-      calculateSMAforTemp(sensorValue[], Count);
-      calculateSMAforSoC(sensorValue[], Count);
+      calculateSMAforTemp(Count);
+      calculateSMAforSoC(Count);
     }
 return ReadData;
 }
