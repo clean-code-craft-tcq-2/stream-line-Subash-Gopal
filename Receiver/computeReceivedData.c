@@ -1,7 +1,7 @@
 #include "computeReceivedData.h"
 
-int minVal[entries] = {50,50};
-int maxVal[entries] = {0,0};
+int minVal[MAX_SENSOR_READINGS] = {50,50};
+int maxVal[MAX_SENSOR_READINGS] = {0,0};
 
 FileAccess ReadData, WriteData;
 int buffSize=0;
