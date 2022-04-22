@@ -94,7 +94,7 @@ for(int i=(Count-5); i< Count; i++)
 float calculateSMAforTemp(int Count)
 {
 float temperatureSMA = calculateSMA(Temperature, Count);
-printf("Simple moving average of last 5 temperature readings\n", temperatureSMA);
+printf("Simple moving average of last five temperature readings %0.2f\n", temperatureSMA);
 return temperatureSMA;
 }
 
@@ -102,7 +102,7 @@ return temperatureSMA;
 float calculateSMAforSoC(int Count)
 {
 float socSMA = calculateSMA(SoC, Count);
-printf("Simple moving average of last 5 SoC readings\n", socSMA);
+printf("Simple moving average of last five SoC readings %0.2f\n", socSMA);
 return socSMA;
 }
 
