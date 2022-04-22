@@ -17,8 +17,8 @@ extern int SoC[MAX_SENSOR_READINGS];  //buffer to store BMS SoC value
 
 extern void findTempMinMaxValues(int Count);
 extern void findSoCMinMaxValues(int Count);
-extern void findParamMinValue(int sensorValue[], int Count, float *minSensorVal);
-extern void findParamMaxValue(int sensorValue[], int Count, float *minSensorVal);
+extern void findParamMinValue(int sensorValue[], int Count, int *minSensorVal);
+extern void findParamMaxValue(int sensorValue[], int Count, int *minSensorVal);
 extern float calculateSMA(int sensorValue[], int Count);
 extern float calculateSMAforTemp(int Count);
 extern float calculateSMAforSoC(int Count);
