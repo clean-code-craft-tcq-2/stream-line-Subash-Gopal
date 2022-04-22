@@ -20,5 +20,5 @@ extern void findSoCMinMaxValues(int Count);
 extern void findParamMinValue(int sensorValue[], int Count, float *minSensorVal);
 extern void findParamMaxValue(int sensorValue[], int Count, float *minSensorVal);
 extern float calculateSMA(int sensorValue[], int Count);
-extern float calculateSMAforTemp(int sensorValue[], int Count);
-extern float calculateSMAforSoC(int sensorValue[], int Count);
+extern float calculateSMAforTemp(int Count);
+extern float calculateSMAforSoC(int Count);
