@@ -4,7 +4,7 @@ int minVal[MAX_SENSOR_READINGS] = {50,50};
 int maxVal[MAX_SENSOR_READINGS] = {0,0};
 
 FileAccess ReadData, WriteData;
-int buffSize=0;
+int Count=0;
 int ReadingCount[]={};
 int Temperature[]={};
 int SoC[]={};
@@ -33,7 +33,7 @@ FileAccess readSenderData()
 	SoC[Idx]=ReadSoC;
 	Idx++;
 	}
-	buffSize= Idx;
+	Count = Idx;
 	ReadData= OK;
 	}	
 	fclose(sensData_fp);
