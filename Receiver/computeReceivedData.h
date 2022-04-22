@@ -9,7 +9,7 @@ typedef enum {
   NOK
 } FileAccess;
 
-extern int buffSize, Count;
+extern int Count;
 extern FileAccess readSenderData();
 extern FileAccess computeSenderData();
 extern int Temperature[MAX_SENSOR_READINGS]; //buffer to store BMS Temperature value
