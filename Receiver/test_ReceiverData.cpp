@@ -10,6 +10,6 @@
 }*/
 
 TEST_CASE("To check Minimum, Maximum and SMA of Temperature and SoC data from a file") 
-{ */
+{ 
   REQUIRE_NOTHROW(computeSenderData()== OK);  
 }
