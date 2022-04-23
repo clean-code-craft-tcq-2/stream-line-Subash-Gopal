@@ -16,12 +16,12 @@ int SoC[]={};
 FileAccess readSenderData()
 {
   FILE *sensData_fp;
-  int line=1, Idx=0;
+  int line=1;
   ReadData= NOK;
   sensData_fp=fopen("./Receiver/SenderData.txt", "r");
   if (sensData_fp!=NULL)
     {
-    int ReadTemperature=0,ReadSoC=0;
+    int Count=0,ReadTemperature=0,ReadSoC=0,Idx=0;
     printf("File opened successfully\n");
 	while(line != EOF)
 	{
