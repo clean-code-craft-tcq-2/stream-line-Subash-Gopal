@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 #include "computeReceivedData.h"
 
 int minVal[MAX_SENSOR_READINGS] = {50,50};
