@@ -13,8 +13,3 @@ TEST_CASE("To check Minimum, Maximum and SMA of Temperature and SoC data from a 
 {
   REQUIRE(getSenderData()== OK);  
 }
-
-TEST_CASE("To find minimum and maximum of temperature readings")
-{
-	findTempMinMaxValues
-}
