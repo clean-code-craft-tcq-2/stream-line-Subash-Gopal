@@ -17,16 +17,11 @@ FileAccess readSenderData()
 {
   FILE *sensData_fp;
   int line=1, Idx=0;
-  FileAccess ReadData= NOK;
-
+  ReadData= NOK;
   sensData_fp=fopen("./Receiver/SenderData.txt", "r");
-  if (sensData_fp==NULL)
+  if (sensData_fp!=NULL)
     {
-    printf("Unable to open the file\n");
-    }	
-  else
-    {
-	int ReadTemperature=0,ReadSoC=0;
+    int ReadTemperature=0,ReadSoC=0;
     printf("File opened successfully\n");
 	while(line != EOF)
 	{
