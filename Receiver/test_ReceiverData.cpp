@@ -11,5 +11,5 @@ TEST_CASE("To check if file is successfully opened for read data access")
 
 TEST_CASE("To check Minimum, Maximum and SMA of Temperature and SoC data from a file") 
 {
-  REQUIRE(computeSenderData()== OK);  
+  REQUIRE_NOTHROW(computeSenderData()== OK);  
 }
