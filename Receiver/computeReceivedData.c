@@ -10,6 +10,7 @@ FileAccess ReadData, WriteData;
 int ReadingCount[]={};
 int Temperature[]={};
 int SoC[]={};
+int Count=0;
 
 /* Function to read the sensor readings from "SenderDataFromConsole.txt" file and store into a buffer */
 FileAccess readSenderData()
@@ -20,7 +21,7 @@ FileAccess readSenderData()
   sensData_fp=fopen("./Receiver/SenderData.txt", "r");
   if (sensData_fp!=NULL)
     {
-    int Count=0,ReadTemperature=0,ReadSoC=0,Idx=0;
+    int entriesCount=0,ReadTemperature=0,ReadSoC=0,Idx=0;
     printf("File opened successfully\n");
 	while(line != EOF)
 	{
@@ -30,7 +31,7 @@ FileAccess readSenderData()
 	SoC[Idx]=ReadSoC;
 	Idx++;
 	}
-	Count = Idx;
+	entriesCount = Idx;
 	ReadData = OK;
 	}	
 	fclose(sensData_fp);
@@ -109,10 +110,10 @@ FileAccess ReadData = NOK;
 ReadData = readSenderData();
   if(ReadData==OK)
     {
-      findTempMinMaxValues(Count);
-      findSoCMinMaxValues(Count);
-      calculateSMAforTemp(Count);
-      calculateSMAforSoC(Count);
+      findTempMinMaxValues(entriesCount);
+      findSoCMinMaxValues(entriesCount);
+      calculateSMAforTemp(entriesCount);
+      calculateSMAforSoC(entriesCount);
     }
 return ReadData;
 }
