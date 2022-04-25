@@ -7,7 +7,6 @@ int minVal[MAX_SENSOR_READINGS] = {50,50};
 int maxVal[MAX_SENSOR_READINGS] = {0,0};
 
 FileAccess ReadData, WriteData;
-int Count=0;
 int ReadingCount[]={};
 int Temperature[]={};
 int SoC[]={};
@@ -16,8 +15,8 @@ int SoC[]={};
 FileAccess readSenderData()
 {
   FILE *sensData_fp;
-  int line=1;
-  ReadData= NOK;
+  int line=1, Idx=0;
+  FileAccess ReadData = NOK;
   sensData_fp=fopen("./Receiver/SenderData.txt", "r");
   if (sensData_fp!=NULL)
     {
@@ -32,7 +31,7 @@ FileAccess readSenderData()
 	Idx++;
 	}
 	Count = Idx;
-	ReadData= OK;
+	ReadData = OK;
 	}	
 	fclose(sensData_fp);
 	return ReadData;
@@ -75,19 +74,6 @@ void findParamMaxValue(int sensorValue[], int Count, int *maxSensorVal)
    }   
  }
  
-/* Function to calculate SMA */ 
-float calculateSMA(int sensorValue[], int Count)
-{
-int sum=0;
-float average=0;
-for(int i=(Count-5); i< Count; i++)
-{
-   sum += sensorValue[i];     
-}
-   average = sum/5;
-   return average;  
-}
-
 /* Function to calculate SMA for last 5 Temperature readings */
 float calculateSMAforTemp(int Count)
 {
@@ -102,6 +88,19 @@ float calculateSMAforSoC(int Count)
 float socSMA = calculateSMA(SoC, Count);
 printf("Simple moving average of last five SoC readings %0.2f\n", socSMA);
 return socSMA;
+}
+
+/* Function to calculate SMA */ 
+float calculateSMA(int sensorValue[], int Count)
+{
+int sum=0;
+float average=0;
+for(int i=(Count-5); i< Count; i++)
+{
+   sum += sensorValue[i];     
+}
+   average = sum/5;
+   return average;  
 }
 
 FileAccess computeSenderData()
