@@ -3,8 +3,8 @@
 #include <math.h>
 #include "computeReceivedData.h"
 
-int minVal[MAX_SENSOR_READINGS] = {50,50};
-int maxVal[MAX_SENSOR_READINGS] = {0,0};
+int minVal[BATT_PARAMETERS] = {50,50};
+int maxVal[BATT_PARAMETERS] = {0,0};
 
 FileAccess ReadData, WriteData;
 int ReadingCount[]={};
