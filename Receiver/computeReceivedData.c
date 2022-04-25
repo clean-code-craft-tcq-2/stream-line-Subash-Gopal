@@ -21,7 +21,7 @@ FileAccess readSenderData()
   sensData_fp=fopen("./Receiver/SenderData.txt", "r");
   if (sensData_fp!=NULL)
     {
-    int entriesCount=0,ReadTemperature=0,ReadSoC=0,Idx=0;
+    int Count=0,ReadTemperature=0,ReadSoC=0,Idx=0;
     printf("File opened successfully\n");
 	while(line != EOF)
 	{
