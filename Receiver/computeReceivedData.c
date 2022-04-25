@@ -10,7 +10,7 @@ FileAccess ReadData, WriteData;
 int ReadingCount[]={};
 int Temperature[]={};
 int SoC[]={};
-int Count=0;
+int entriesCount=0;
 
 /* Function to read the sensor readings from "SenderDataFromConsole.txt" file and store into a buffer */
 FileAccess readSenderData()
