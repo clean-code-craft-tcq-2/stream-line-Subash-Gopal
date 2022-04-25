@@ -6,7 +6,7 @@
 TEST_CASE("To check if file is successfully opened for read data access") 
 {
 FILE *sensData_fp=fopen("./Receiver/SenderDataFromConsole.txt", "r"); 
-REQUIRE_NOTHROW(readSenderData()== OK); 
+REQUIRE(readSenderData()== OK); 
 }
 
 
