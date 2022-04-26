@@ -16,8 +16,8 @@ int entriesCount=0;
 FileAccess readSenderData()
 {
   FILE *sensData_fp;
-  int line=1, Idx=0;
-  FileAccess ReadData = NOK;
+  int line=1;
+  ReadData = NOK;
   sensData_fp=fopen("./Receiver/SenderData.txt", "r");
   if (sensData_fp!=NULL)
     {
@@ -106,7 +106,7 @@ for(int i=(Count-5); i< Count; i++)
 
 FileAccess computeSenderData()
 {
-FileAccess ReadData = NOK;
+ReadData = NOK;
 ReadData = readSenderData();
   if(ReadData==OK)
     {
