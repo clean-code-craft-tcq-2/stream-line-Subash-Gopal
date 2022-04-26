@@ -93,9 +93,8 @@ return socSMA;
 /* Function to calculate SMA */ 
 float calculateSMA(int sensorValue[], int Count)
 {
-int sum=0;
-float average=0;
-for(int i=(Count-5); i<= Count; i++)
+float sum, average=0.0;
+for(int i=Count; i> (Count-5); i--)
 {
    sum += sensorValue[i];     
 }
