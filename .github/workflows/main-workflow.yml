@@ -15,10 +15,10 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y gcovr
 
-    - name: build
+    - name: buildSender
       run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testSender testSender.cpp ./Sender/Sender.cpp
     
-    - name: run
+    - name: runSender
       run: ./testSender
         
     - name: buildReceiver
