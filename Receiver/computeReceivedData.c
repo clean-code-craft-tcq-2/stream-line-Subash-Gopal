@@ -95,7 +95,7 @@ float calculateSMA(int sensorValue[], int Count)
 {
 int sum=0;
 float average=0;
-for(int i=(Count-5); i< Count; i++)
+for(int i=(Count-5); i<= Count; i++)
 {
    sum += sensorValue[i];     
 }
