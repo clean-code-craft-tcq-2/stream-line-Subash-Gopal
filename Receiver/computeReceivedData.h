@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define MAX_SENSOR_READINGS 50  
+#define MAX_SENSOR_READINGS 49  
 #define BATT_PARAMETERS 2
 
 typedef enum {
