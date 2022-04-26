@@ -3,8 +3,8 @@
 #include <math.h>
 #include "computeReceivedData.h"
 
-int minVal[BATT_PARAMETERS] = {0,0};
-int maxVal[BATT_PARAMETERS] = {50,50};
+int minVal[BATT_PARAMETERS] = {100,100};
+int maxVal[BATT_PARAMETERS] = {0,0};
 
 int ReadingCount[]={};
 int Temperature[]={};
