@@ -5,11 +5,10 @@
 
 TEST_CASE("To check if file is successfully opened for read data access") 
 {
- FILE *sensData_fp=fopen("./Receiver/SenderDataFromConsole.txt", "r"); 
- REQUIRE_NOTHROW(readSenderData()== OK); 
+FILE *sensData_fp=fopen("./Receiver/SenderDataFromConsole.txt", "r"); 
+REQUIRE(readSenderData()== OK); 
 }
-
 TEST_CASE("To check Minimum, Maximum and SMA of Temperature and SoC data from a file") 
 {
-  REQUIRE(getSenderData()== OK);  
+  REQUIRE(computeSenderData()== OK);  
 }
