@@ -49,4 +49,3 @@ Count,Temp,SoC
 47,19,12
 48,26,86
 49,-26,39
-Closed the CSV file 
