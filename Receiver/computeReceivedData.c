@@ -51,7 +51,7 @@ void findSoCMinMaxValues(int Count)
 {
  findParamMinValue(SoC, Count, &minVal[1]);
  findParamMaxValue(SoC, Count, &maxVal[1]);
- printf("Minimum and Maximum SoC values from Sender are %d%%  and %d%% \n",minVal[0],maxVal[0]);
+ printf("Minimum and Maximum SoC values from Sender are %d%%  and %d%% \n",minVal[1],maxVal[1]);
 }
 
 /* Function to find minimum value of battery parameter */
