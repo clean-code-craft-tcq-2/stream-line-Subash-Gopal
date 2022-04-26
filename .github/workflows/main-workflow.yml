@@ -22,7 +22,7 @@ jobs:
       run: ./testSender
         
     - name: buildReceiver
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker ./Receiver/*.c*     
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker test_ReceiverData.cpp ./Receiver/*.c
    
     - name: runReceiver
       run: ./testchecker
