@@ -94,7 +94,7 @@ return socSMA;
 float calculateSMA(int sensorValue[], int Count)
 {
 float sum, average=0.0;
-for(int i=(Count-6); i<Count; i++)
+for(int i=(Count-6); i<(Count-1); i++)
 {
    sum += sensorValue[i];
    printf("%d\n", sensorValue[i]);
