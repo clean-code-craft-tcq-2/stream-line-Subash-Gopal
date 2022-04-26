@@ -3,7 +3,7 @@
 #include <math.h>
 #include "computeReceivedData.h"
 
-int minVal[BATT_PARAMETERS] = {50,50};
+int minVal[BATT_PARAMETERS] = {49,49};
 int maxVal[BATT_PARAMETERS] = {0,0};
 
 int ReadingCount[]={};
