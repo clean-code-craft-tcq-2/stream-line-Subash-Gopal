@@ -3,7 +3,7 @@
 #include <math.h>
 
 #define MAX_SENSOR_READINGS 50  
-#define BATT_PARAMETERS 3
+#define BATT_PARAMETERS 2
 
 typedef enum {
   NOK,
