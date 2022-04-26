@@ -1,5 +1,3 @@
-Run ./testSender
-Opened the CSV file to write the data 
 Count,Temp,SoC
 0,-17,86
 1,17,15
