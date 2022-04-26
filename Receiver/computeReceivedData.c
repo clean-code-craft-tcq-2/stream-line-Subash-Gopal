@@ -6,7 +6,6 @@
 int minVal[BATT_PARAMETERS] = {50,50};
 int maxVal[BATT_PARAMETERS] = {0,0};
 
-FileAccess ReadData, WriteData;
 int ReadingCount[]={};
 int Temperature[]={};
 int SoC[]={};
@@ -17,7 +16,7 @@ FileAccess readSenderData()
 {
   FILE *sensData_fp;
   int line=1;
-  ReadData = NOK;
+  FileAccess ReadData = NOK;
   sensData_fp=fopen("./Receiver/SenderData.txt", "r");
   if (sensData_fp!=NULL)
     {
@@ -106,9 +105,9 @@ for(int i=(Count-5); i< Count; i++)
 
 FileAccess computeSenderData()
 {
-ReadData = NOK;
+FileAccess ReadData = NOK;
 ReadData = readSenderData();
-  if(ReadData==OK)
+  if(ReadData)
     {
       findTempMinMaxValues(entriesCount);
       findSoCMinMaxValues(entriesCount);
