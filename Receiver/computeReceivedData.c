@@ -17,7 +17,7 @@ FileAccess readSenderData()
   FILE *sensData_fp;
   int line=1;
   FileAccess ReadData = NOK;
-  sensData_fp=fopen("./Receiver/SenderData.txt", "r");
+  sensData_fp=fopen("./Receiver/SenderDataFromConsole.txt", "r");
   if (sensData_fp!=NULL)
     {
     int Count=0,ReadTemperature=0,ReadSoC=0,Idx=0;
